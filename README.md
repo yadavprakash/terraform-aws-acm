@@ -55,30 +55,15 @@ module "acm" {
 }
 ```
 
-## Module Inputs
-- `name`: A name for your acm.
-- `domain_name`: Domain name for which the certificate should be issued.
-- `subject_alternative_names`: Set of domains that should be SANs in the issued certificate.
-- `validation_method`: Which method to use for validation. DNS or EMAIL are valid.
-
-- For security group settings, you can configure the ingress and egress rules using variables like:
-
-## Module Outputs
-- `id` : The time at which the certificate was issued.
-- `arn` :  ARN of the certificate.
-- `tags`: Map of tags to assign to the resource.
-- `acm_certificate_status` : List of FQDNs that implement the validation.
-
-- Other relevant security group outputs (modify as needed).
-
 ## Example
-For detailed examples on how to use this module, please refer to the '[example](https://github.com/opsstation/terraform-aws-acm/blob/master/_examples)' directory within this repository.
+For detailed examples on how to use this module, please refer to the [example](https://github.com/opsstation/terraform-aws-acm/blob/master/_examples) directory within this repository.
 
 ## Author
 Your Name Replace '[License Name]' and '[Your Name]' with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/opsstation/terraform-aws-acm/blob/master/LICENSE) file for details.
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
