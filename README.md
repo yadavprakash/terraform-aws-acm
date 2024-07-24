@@ -21,10 +21,10 @@ To use this module, you can include it in your Terraform configuration. Here's a
 
 ```hcl
 module "acm" {
-  source                    = "git::https://github.com/opsstation/terraform-aws-acm.git?ref=v1.0.0"
+  source                    = "git::https://github.com/yadavprakash/terraform-aws-acm.git?ref=v1.0.0"
   name                      = "certificate"
   environment               = "test"
-  domain_name               = "opsstation.com"
+  domain_name               = "yadavprakash.com"
   subject_alternative_names = ["*.${local.domain}", "www.${local.domain}"]
 }
 ```
@@ -32,12 +32,12 @@ module "acm" {
 ## Example: generate-certificate-email
 ```hcl
 module "acm" {
-  source                    = "git::https://github.com/opsstation/terraform-aws-acm.git?ref=v1.0.0"
+  source                    = "git::https://github.com/yadavprakash/terraform-aws-acm.git?ref=v1.0.0"
   name                      = "certificate"
   environment               = "test"
   validate_certificate      = false
-  domain_name               = "opsstation.com"
-  subject_alternative_names = ["www.opsstation.com"]
+  domain_name               = "example.com"
+  subject_alternative_names = ["www.example.com"]
   validation_method         = "EMAIL"
 }
 ```
@@ -45,24 +45,24 @@ module "acm" {
 ## Example: import-certificate
 ```hcl
 module "acm" {
-  source             = "git::https://github.com/opsstation/terraform-aws-acm.git?ref=v1.0.0"
+  source             = "git::https://github.com/yadavprakash/terraform-aws-acm.git?ref=v1.0.0"
   name               = "certificate"
   environment        = "test"
   import_certificate = true
-  private_key        = "./../../../opsstation-private-key.pem"
-  certificate_body   = "./../../../opsstation-cert.pem"
-  certificate_chain  = "./../../../opsstation-chain.crt"
+  private_key        = "./../../../yadavprakash-private-key.pem"
+  certificate_body   = "./../../../yadavprakash-cert.pem"
+  certificate_chain  = "./../../../yadavprakash-chain.crt"
 }
 ```
 
 ## Example
-For detailed examples on how to use this module, please refer to the [example](https://github.com/opsstation/terraform-aws-acm/blob/master/_examples) directory within this repository.
+For detailed examples on how to use this module, please refer to the [example](https://github.com/yadavprakash/terraform-aws-acm/blob/master/_examples) directory within this repository.
 
 ## Author
 Your Name Replace '[License Name]' and '[Your Name]' with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/opsstation/terraform-aws-acm/blob/master/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/yadavprakash/terraform-aws-acm/blob/master/LICENSE) file for details.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -82,7 +82,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::git@github.com:opsstation/terraform-aws-labels.git | v1.0.0 |
+| <a name="module_labels"></a> [labels](#module\_labels) | git::git@github.com:yadavprakash/terraform-aws-labels.git | v1.0.0 |
 
 ## Resources
 
@@ -109,7 +109,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
 | <a name="input_import_certificate"></a> [import\_certificate](#input\_import\_certificate) | Set to true or false to decide the creation and import of a acm certificate. | `bool` | `false` | no |
 | <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. `name`,`application`. | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre> | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'opsstation' | `string` | `""` | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'yadavprakash' | `string` | `""` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | <a name="input_private_key"></a> [private\_key](#input\_private\_key) | Path of private key. | `string` | `""` | no |
 | <a name="input_private_zone"></a> [private\_zone](#input\_private\_zone) | Used with name field to get a private Hosted Zone. | `bool` | `false` | no |
