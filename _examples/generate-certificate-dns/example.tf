@@ -10,6 +10,6 @@ module "acm" {
   source                    = "./../../"
   name                      = "certificate"
   environment               = "test"
-  domain_name               = "opsstation.com"
+  domain_name               = "example.com"
   subject_alternative_names = ["*.${local.domain}", "www.${local.domain}"]
 }
